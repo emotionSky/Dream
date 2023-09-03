@@ -1,5 +1,5 @@
-﻿#ifndef __STRING_OPERATION_H__
-#define __STRING_OPERATION_H__
+﻿#ifndef __DREAM_STRING_H__
+#define __DREAM_STRING_H__
 
 #include <DreamSky/dream_define.h>
 #include <string>
@@ -40,4 +40,4 @@ DREAMSKY_API void right_delete_string(std::string& str, char ch);
 	right_delete_string(str, ' ');      \
 }
 
-#endif //!__STRING_OPERATION_H__
+#endif //!__DREAM_STRING_H__

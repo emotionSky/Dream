@@ -1,5 +1,5 @@
 @REM 设置一些路径
-set project_name=DreamCommon
+set project_name=DreamConfig
 set bin_base=.\bin
 set export_base=..\..\3d_part
 

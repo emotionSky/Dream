@@ -21,6 +21,14 @@
   <ItemGroup>
     <None Include="postbuild.bat" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\DreamSky\dream_ini.h" />
+    <ClInclude Include="..\include\DreamSky\dream_json.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\dream_ini.cpp" />
+    <ClCompile Include="..\src\dream_json.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -81,17 +89,19 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <TargetName>libdream_log</TargetName>
+    <TargetName>libdream_config</TargetName>
     <IntDir>$(Platform)_$(Configuration)\</IntDir>
     <OutDir>$(ProjectDir)bin\</OutDir>
-    <IncludePath>..\include;..\..\3d_part\DreamHeaders\include;..\..\3d_part\rapidjson\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\include;..\..\3d_part\DreamHeaders\include;..\..\3d_part\DreamCommon\include;..\..\3d_part\rapidjson\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\3d_part\DreamCommon\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(ProjectDir)bin\</OutDir>
     <IntDir>$(Platform)_$(Configuration)\</IntDir>
-    <TargetName>libdream_log</TargetName>
-    <IncludePath>..\include;..\..\3d_part\DreamHeaders\include;$(IncludePath)</IncludePath>
+    <TargetName>libdream_config</TargetName>
+    <IncludePath>..\include;..\..\3d_part\DreamHeaders\include;..\..\3d_part\DreamCommon\include;..\..\3d_part\rapidjson\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\3d_part\DreamCommon\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -132,6 +142,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libdream_common.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>.\postbuild.bat</Command>
@@ -152,6 +163,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libdream_common.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>.\postbuild.bat</Command>
