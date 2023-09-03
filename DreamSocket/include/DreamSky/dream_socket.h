@@ -1,4 +1,4 @@
-#ifndef __DREAM_SOCKET_H__
+﻿#ifndef __DREAM_SOCKET_H__
 #define __DREAM_SOCKET_H__
 
 #include <DreamSky/dream_define.h>

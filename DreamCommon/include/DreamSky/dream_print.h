@@ -1,4 +1,4 @@
-#ifndef __DREAM_PRINT_H__
+﻿#ifndef __DREAM_PRINT_H__
 #define __DREAM_PRINT_H__
 
 #include <DreamSky/dream_define.h>

@@ -1,4 +1,4 @@
-#include <DreamSky/dream_string.h>
+ï»¿#include <DreamSky/dream_string.h>
 #include <cstring>
 
 void left_delete(char* str, char ch)
@@ -8,7 +8,7 @@ void left_delete(char* str, char ch)
 		return;
 
 	len = strlen(str);
-	while (len > 0 && str[len - 1] == ch)   //Î»ÖÃ»»Ò»ÏÂ   
+	while (len > 0 && str[len - 1] == ch)   //ä½ç½®æ¢ä¸€ä¸‹   
 		str[--len] = 0;
 }
 
@@ -18,11 +18,11 @@ void right_delete(char* str, char ch)
 	len = strlen(str);
 	char* p_tmp = str;
 
-	/* Èç¹û²»ÊÇÖ±½ÓÒÔch¿ªÍ·µÄ£¬·µ»Ø¼´¿É */
+	/* å¦‚æœä¸æ˜¯ç›´æ¥ä»¥chå¼€å¤´çš„ï¼Œè¿”å›å³å¯ */
 	if ((*p_tmp) != ch)
 		return;
 
-	/* ÕÒµ½µÚÒ»¸ö²»ÊÇchµÄÎ»ÖÃ */
+	/* æ‰¾åˆ°ç¬¬ä¸€ä¸ªä¸æ˜¯chçš„ä½ç½® */
 	while ((*p_tmp) != '\0')
 	{
 		if ((*p_tmp) == ch)
@@ -31,7 +31,7 @@ void right_delete(char* str, char ch)
 			break;
 	}
 
-	/* Èç¹û×Ö·û´®È«²¿¶¼ÊÇch×Ö·û£¬×Ö·û´®Çå¿Õ·µ»Ø */
+	/* å¦‚æœå­—ç¬¦ä¸²å…¨éƒ¨éƒ½æ˜¯chå­—ç¬¦ï¼Œå­—ç¬¦ä¸²æ¸…ç©ºè¿”å› */
 	if ((*p_tmp) == '\0')
 	{
 		*str = '\0';
@@ -53,15 +53,15 @@ void left_delete_string(std::string& str, char ch)
 	if (str.empty())
 		return;
 	
-	/* ÅĞ¶ÏÊÇ·ñÎªÆ¥ÅäµÄ×Ö·û */
+	/* åˆ¤æ–­æ˜¯å¦ä¸ºåŒ¹é…çš„å­—ç¬¦ */
 	auto IsMatched = [ch](char ucs4) ->bool {
 		/**
-		 * 0x20	space ¿Õ¸ñ
-		 * 0x09 HT - horizontal tab Ë®Æ½ÖÆ±í·û
-		 * 0x0A LF - line feed »»ĞĞ¼ü
-		 * 0x0B VT - vertical tab ´¹Ö±ÖÆ±í·û
-		 * 0x0C FF - form feed »»Ò³¼ü
-		 * 0x0D CR - carriage return »Ø³µ¼ü
+		 * 0x20	space ç©ºæ ¼
+		 * 0x09 HT - horizontal tab æ°´å¹³åˆ¶è¡¨ç¬¦
+		 * 0x0A LF - line feed æ¢è¡Œé”®
+		 * 0x0B VT - vertical tab å‚ç›´åˆ¶è¡¨ç¬¦
+		 * 0x0C FF - form feed æ¢é¡µé”®
+		 * 0x0D CR - carriage return å›è½¦é”®
 		 */
 		//return ucs4 == 0x20 || (ucs4 <= 0x0d && ucs4 >= 0x09);
 		return ucs4 == ch;
@@ -80,15 +80,15 @@ void right_delete_string(std::string& str, char ch)
 	if (str.empty())
 		return;
 
-	/* ÅĞ¶ÏÊÇ·ñÎªÆ¥ÅäµÄ×Ö·û */
+	/* åˆ¤æ–­æ˜¯å¦ä¸ºåŒ¹é…çš„å­—ç¬¦ */
 	auto IsMatched = [ch](char ucs4) ->bool {
 		/**
-		 * 0x20	space ¿Õ¸ñ
-		 * 0x09 HT - horizontal tab Ë®Æ½ÖÆ±í·û
-		 * 0x0A LF - line feed »»ĞĞ¼ü
-		 * 0x0B VT - vertical tab ´¹Ö±ÖÆ±í·û
-		 * 0x0C FF - form feed »»Ò³¼ü
-		 * 0x0D CR - carriage return »Ø³µ¼ü
+		 * 0x20	space ç©ºæ ¼
+		 * 0x09 HT - horizontal tab æ°´å¹³åˆ¶è¡¨ç¬¦
+		 * 0x0A LF - line feed æ¢è¡Œé”®
+		 * 0x0B VT - vertical tab å‚ç›´åˆ¶è¡¨ç¬¦
+		 * 0x0C FF - form feed æ¢é¡µé”®
+		 * 0x0D CR - carriage return å›è½¦é”®
 		 */
 		 //return ucs4 == 0x20 || (ucs4 <= 0x0d && ucs4 >= 0x09);
 		return ucs4 == ch;
