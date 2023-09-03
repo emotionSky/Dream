@@ -21,6 +21,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DreamLog", "DreamLog\vcproj
 		{FD375F45-251E-4206-B21E-66D15D2FD82D} = {FD375F45-251E-4206-B21E-66D15D2FD82D}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DreamSocket", "DreamSocket\vcproj\DreamSocket.vcxproj", "{494FF756-FE47-4A7D-A107-0122C9357929}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{9906645A-0434-49C6-B8D0-84C6416A2094}.Release|x64.Build.0 = Release|x64
 		{9906645A-0434-49C6-B8D0-84C6416A2094}.Release|x86.ActiveCfg = Release|Win32
 		{9906645A-0434-49C6-B8D0-84C6416A2094}.Release|x86.Build.0 = Release|Win32
+		{494FF756-FE47-4A7D-A107-0122C9357929}.Debug|x64.ActiveCfg = Debug|x64
+		{494FF756-FE47-4A7D-A107-0122C9357929}.Debug|x64.Build.0 = Debug|x64
+		{494FF756-FE47-4A7D-A107-0122C9357929}.Debug|x86.ActiveCfg = Debug|Win32
+		{494FF756-FE47-4A7D-A107-0122C9357929}.Debug|x86.Build.0 = Debug|Win32
+		{494FF756-FE47-4A7D-A107-0122C9357929}.Release|x64.ActiveCfg = Release|x64
+		{494FF756-FE47-4A7D-A107-0122C9357929}.Release|x64.Build.0 = Release|x64
+		{494FF756-FE47-4A7D-A107-0122C9357929}.Release|x86.ActiveCfg = Release|Win32
+		{494FF756-FE47-4A7D-A107-0122C9357929}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
