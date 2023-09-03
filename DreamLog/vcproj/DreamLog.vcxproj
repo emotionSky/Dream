@@ -33,7 +33,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{8114670d-7197-4a66-aec8-75aae5eea8ad}</ProjectGuid>
+    <ProjectGuid>{9906645A-0434-49C6-B8D0-84C6416A2094}</ProjectGuid>
     <RootNamespace>Log</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -93,14 +93,14 @@
     <TargetName>libdream_log</TargetName>
     <IntDir>$(Platform)_$(Configuration)\</IntDir>
     <OutDir>$(ProjectDir)bin\</OutDir>
-    <IncludePath>..\include;..\3d_part\DreamHeaders\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\include;..\..\3d_part\DreamHeaders\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(ProjectDir)bin\</OutDir>
     <IntDir>$(Platform)_$(Configuration)\</IntDir>
     <TargetName>libdream_log</TargetName>
-    <IncludePath>..\include;..\3d_part\DreamHeaders\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\include;..\..\3d_part\DreamHeaders\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

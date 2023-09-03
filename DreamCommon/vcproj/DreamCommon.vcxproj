@@ -92,14 +92,14 @@
     <TargetName>libdream_log</TargetName>
     <IntDir>$(Platform)_$(Configuration)\</IntDir>
     <OutDir>$(ProjectDir)bin\</OutDir>
-    <IncludePath>..\include;..\3d_part\DreamHeaders\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\include;..\..\3d_part\DreamHeaders\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(ProjectDir)bin\</OutDir>
     <IntDir>$(Platform)_$(Configuration)\</IntDir>
     <TargetName>libdream_log</TargetName>
-    <IncludePath>..\include;..\3d_part\DreamHeaders\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\include;..\..\3d_part\DreamHeaders\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
