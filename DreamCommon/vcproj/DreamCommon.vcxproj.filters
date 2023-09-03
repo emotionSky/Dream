@@ -29,12 +29,18 @@
     <ClInclude Include="..\include\DreamSky\dream_time.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\DreamSky\dream_print.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\dream_string.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="..\src\dream_time.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dream_print.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

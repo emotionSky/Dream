@@ -22,10 +22,12 @@
     <None Include="postbuild.bat" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\DreamSky\dream_print.h" />
     <ClInclude Include="..\include\DreamSky\dream_string.h" />
     <ClInclude Include="..\include\DreamSky\dream_time.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\dream_print.cpp" />
     <ClCompile Include="..\src\dream_string.cpp" />
     <ClCompile Include="..\src\dream_time.cpp" />
   </ItemGroup>
