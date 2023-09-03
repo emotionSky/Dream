@@ -44,7 +44,7 @@ void print_console(int level, const char* fmt, ...)
 		fputs("DEBUG: ", stderr);
 		fputs(buffer, stdout);
 		break;
-	case PRINT_INFO:
+	case PRINT_INFOR:
 		fputs("INFOR: ", stderr);
 		fputs(buffer, stdout);
 		break;

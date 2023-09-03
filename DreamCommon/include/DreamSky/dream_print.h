@@ -6,7 +6,7 @@
 enum DreamPrintLevel
 {
 	PRINT_DEBUG = 0,
-	PRINT_INFO,
+	PRINT_INFOR,
 	PRINT_ERROR,
 };
 
