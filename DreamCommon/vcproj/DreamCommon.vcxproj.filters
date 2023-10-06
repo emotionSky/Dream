@@ -16,6 +16,12 @@
     <Filter Include="脚本">
       <UniqueIdentifier>{356d2778-c2a1-46f6-b63f-c3fd534717f2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\string">
+      <UniqueIdentifier>{65c56f81-eb81-472b-8d6a-fd03b20b4899}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\string">
+      <UniqueIdentifier>{e241702b-a51b-48fc-8ef0-bb5f183b5bf1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="postbuild.bat">
@@ -32,6 +38,18 @@
     <ClInclude Include="..\include\DreamSky\dream_print.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\DreamSky\string\dstring.h">
+      <Filter>头文件\string</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\DreamSky\dream_mem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\DreamSky\dream_error.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\DreamSky\dream_define.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\dream_string.cpp">
@@ -41,6 +59,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="..\src\dream_print.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\string\dstring.cpp">
+      <Filter>源文件\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dream_mem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dream_error.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

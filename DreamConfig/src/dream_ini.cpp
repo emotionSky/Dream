@@ -1,9 +1,10 @@
-﻿#include <DreamSky/dream_ini.h>
+﻿#include "DreamSky/dream_ini.h"
 #include <DreamSky/dream_string.h>
 #include <cstdio>
 #include <map>
-#include <string>
 #include <cstring>
+
+DREAM_NAMESPACE_BEGIN
 
 class ConfigData
 {
@@ -108,8 +109,8 @@ bool DreamIni::LoadConfig()
 			strncpy(key, linebuf, ptmp - linebuf);
 			strcpy(value, ptmp + 1);
 
-			all_trim(key);
-			all_trim(value);
+			both_trim_c(key);
+			both_trim_c(value);
 
 			m_pData->m_str.insert(std::make_pair<>(std::string(key), std::string(value)));
 		}
@@ -177,3 +178,5 @@ void DreamIni::SetInt(const char* key, int value)
 }
 
 #endif
+
+DREAM_NAMESPACE_END

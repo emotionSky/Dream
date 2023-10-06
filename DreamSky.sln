@@ -4,24 +4,28 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DreamCommon", "DreamCommon\vcproj\DreamCommon.vcxproj", "{CD51641E-ACC8-417D-B69A-86FBA10C9EA5}"
-	ProjectSection(ProjectDependencies) = postProject
-		{FD375F45-251E-4206-B21E-66D15D2FD82D} = {FD375F45-251E-4206-B21E-66D15D2FD82D}
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DreamConfig", "DreamConfig\vcproj\DreamConfig.vcxproj", "{8114670D-7197-4A66-AEC8-75AAE5EEA8AD}"
 	ProjectSection(ProjectDependencies) = postProject
 		{CD51641E-ACC8-417D-B69A-86FBA10C9EA5} = {CD51641E-ACC8-417D-B69A-86FBA10C9EA5}
-		{FD375F45-251E-4206-B21E-66D15D2FD82D} = {FD375F45-251E-4206-B21E-66D15D2FD82D}
 	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DreamHeaders", "DreamHeaders\vcproj\DreamHeaders.vcxproj", "{FD375F45-251E-4206-B21E-66D15D2FD82D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DreamLog", "DreamLog\vcproj\DreamLog.vcxproj", "{9906645A-0434-49C6-B8D0-84C6416A2094}"
-	ProjectSection(ProjectDependencies) = postProject
-		{FD375F45-251E-4206-B21E-66D15D2FD82D} = {FD375F45-251E-4206-B21E-66D15D2FD82D}
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DreamSocket", "DreamSocket\vcproj\DreamSocket.vcxproj", "{494FF756-FE47-4A7D-A107-0122C9357929}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CD51641E-ACC8-417D-B69A-86FBA10C9EA5} = {CD51641E-ACC8-417D-B69A-86FBA10C9EA5}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DreamProcess", "DreamProcess\vcproj\DreamProcess.vcxproj", "{E862D548-3B4E-4265-8C56-2E3EFAB3ACA1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CD51641E-ACC8-417D-B69A-86FBA10C9EA5} = {CD51641E-ACC8-417D-B69A-86FBA10C9EA5}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DreamThread", "DreamThread\vcproj\DreamThread.vcxproj", "{68809571-840B-4280-AB71-5B2766B8048F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CD51641E-ACC8-417D-B69A-86FBA10C9EA5} = {CD51641E-ACC8-417D-B69A-86FBA10C9EA5}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,14 +51,6 @@ Global
 		{8114670D-7197-4A66-AEC8-75AAE5EEA8AD}.Release|x64.Build.0 = Release|x64
 		{8114670D-7197-4A66-AEC8-75AAE5EEA8AD}.Release|x86.ActiveCfg = Release|Win32
 		{8114670D-7197-4A66-AEC8-75AAE5EEA8AD}.Release|x86.Build.0 = Release|Win32
-		{FD375F45-251E-4206-B21E-66D15D2FD82D}.Debug|x64.ActiveCfg = Debug|x64
-		{FD375F45-251E-4206-B21E-66D15D2FD82D}.Debug|x64.Build.0 = Debug|x64
-		{FD375F45-251E-4206-B21E-66D15D2FD82D}.Debug|x86.ActiveCfg = Debug|Win32
-		{FD375F45-251E-4206-B21E-66D15D2FD82D}.Debug|x86.Build.0 = Debug|Win32
-		{FD375F45-251E-4206-B21E-66D15D2FD82D}.Release|x64.ActiveCfg = Release|x64
-		{FD375F45-251E-4206-B21E-66D15D2FD82D}.Release|x64.Build.0 = Release|x64
-		{FD375F45-251E-4206-B21E-66D15D2FD82D}.Release|x86.ActiveCfg = Release|Win32
-		{FD375F45-251E-4206-B21E-66D15D2FD82D}.Release|x86.Build.0 = Release|Win32
 		{9906645A-0434-49C6-B8D0-84C6416A2094}.Debug|x64.ActiveCfg = Debug|x64
 		{9906645A-0434-49C6-B8D0-84C6416A2094}.Debug|x64.Build.0 = Debug|x64
 		{9906645A-0434-49C6-B8D0-84C6416A2094}.Debug|x86.ActiveCfg = Debug|Win32
@@ -71,6 +67,22 @@ Global
 		{494FF756-FE47-4A7D-A107-0122C9357929}.Release|x64.Build.0 = Release|x64
 		{494FF756-FE47-4A7D-A107-0122C9357929}.Release|x86.ActiveCfg = Release|Win32
 		{494FF756-FE47-4A7D-A107-0122C9357929}.Release|x86.Build.0 = Release|Win32
+		{E862D548-3B4E-4265-8C56-2E3EFAB3ACA1}.Debug|x64.ActiveCfg = Debug|x64
+		{E862D548-3B4E-4265-8C56-2E3EFAB3ACA1}.Debug|x64.Build.0 = Debug|x64
+		{E862D548-3B4E-4265-8C56-2E3EFAB3ACA1}.Debug|x86.ActiveCfg = Debug|Win32
+		{E862D548-3B4E-4265-8C56-2E3EFAB3ACA1}.Debug|x86.Build.0 = Debug|Win32
+		{E862D548-3B4E-4265-8C56-2E3EFAB3ACA1}.Release|x64.ActiveCfg = Release|x64
+		{E862D548-3B4E-4265-8C56-2E3EFAB3ACA1}.Release|x64.Build.0 = Release|x64
+		{E862D548-3B4E-4265-8C56-2E3EFAB3ACA1}.Release|x86.ActiveCfg = Release|Win32
+		{E862D548-3B4E-4265-8C56-2E3EFAB3ACA1}.Release|x86.Build.0 = Release|Win32
+		{68809571-840B-4280-AB71-5B2766B8048F}.Debug|x64.ActiveCfg = Debug|x64
+		{68809571-840B-4280-AB71-5B2766B8048F}.Debug|x64.Build.0 = Debug|x64
+		{68809571-840B-4280-AB71-5B2766B8048F}.Debug|x86.ActiveCfg = Debug|Win32
+		{68809571-840B-4280-AB71-5B2766B8048F}.Debug|x86.Build.0 = Debug|Win32
+		{68809571-840B-4280-AB71-5B2766B8048F}.Release|x64.ActiveCfg = Release|x64
+		{68809571-840B-4280-AB71-5B2766B8048F}.Release|x64.Build.0 = Release|x64
+		{68809571-840B-4280-AB71-5B2766B8048F}.Release|x86.ActiveCfg = Release|Win32
+		{68809571-840B-4280-AB71-5B2766B8048F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

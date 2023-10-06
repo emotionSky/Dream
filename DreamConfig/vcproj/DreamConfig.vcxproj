@@ -92,8 +92,8 @@
     <TargetName>libdream_config</TargetName>
     <IntDir>$(Platform)_$(Configuration)\</IntDir>
     <OutDir>$(ProjectDir)bin\</OutDir>
-    <IncludePath>..\include;..\..\3d_part\DreamHeaders\include;..\..\3d_part\DreamCommon\include;..\..\3d_part\rapidjson\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\..\3d_part\DreamCommon\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\include;..\..\3d_part\DreamCommon\v1.0.0\include;..\..\3d_part\rapidjson\v1.1.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\3d_part\DreamCommon\v1.0.0\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>

@@ -22,14 +22,21 @@
     <None Include="postbuild.bat" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\DreamSky\dream_define.h" />
+    <ClInclude Include="..\include\DreamSky\dream_error.h" />
+    <ClInclude Include="..\include\DreamSky\dream_mem.h" />
     <ClInclude Include="..\include\DreamSky\dream_print.h" />
     <ClInclude Include="..\include\DreamSky\dream_string.h" />
     <ClInclude Include="..\include\DreamSky\dream_time.h" />
+    <ClInclude Include="..\include\DreamSky\string\dstring.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\dream_error.cpp" />
+    <ClCompile Include="..\src\dream_mem.cpp" />
     <ClCompile Include="..\src\dream_print.cpp" />
     <ClCompile Include="..\src\dream_string.cpp" />
     <ClCompile Include="..\src\dream_time.cpp" />
+    <ClCompile Include="..\src\string\dstring.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -94,7 +101,7 @@
     <TargetName>libdream_common</TargetName>
     <IntDir>$(Platform)_$(Configuration)\</IntDir>
     <OutDir>$(ProjectDir)bin\</OutDir>
-    <IncludePath>..\include;..\..\3d_part\DreamHeaders\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -135,9 +142,11 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;DREAMSKY_EXPORTS;USE_STD_VSNPRINTF;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;DREAMSKY_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

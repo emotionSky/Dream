@@ -2,6 +2,8 @@
 #include <cstdarg>
 #include <cstdio>
 
+DREAM_NAMESPACE_BEGIN
+
 #define BUFFER_SIZE 1024
 
 DREAMSKY_ALWAYS_INLINE DreamPrintLevel GetPrintLevel(int level)
@@ -56,3 +58,5 @@ void print_console(int level, const char* fmt, ...)
 		break;
 	}
 }
+
+DREAM_NAMESPACE_END

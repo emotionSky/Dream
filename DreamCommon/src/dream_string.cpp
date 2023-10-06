@@ -1,8 +1,16 @@
 ﻿#include <DreamSky/dream_string.h>
 #include <cstring>
+#if __cplusplus >= 201103L
+#include <regex>
+#endif
 
-void left_delete(char* str, char ch)
+DREAM_NAMESPACE_BEGIN
+
+void left_delete_c(char* str, char ch)
 {
+	if (!str || str[0] == '\0')
+		return;
+
 	size_t len = 0;
 	if (str == nullptr)
 		return;
@@ -12,8 +20,11 @@ void left_delete(char* str, char ch)
 		str[--len] = 0;
 }
 
-void right_delete(char* str, char ch)
+void right_delete_c(char* str, char ch)
 {
+	if (!str || str[0] == '\0')
+		return;
+
 	size_t len = 0;
 	len = strlen(str);
 	char* p_tmp = str;
@@ -48,7 +59,7 @@ void right_delete(char* str, char ch)
 	(*p_tmp2) = '\0';
 }
 
-void left_delete_string(std::string& str, char ch)
+void left_delete(std::string& str, char ch)
 {
 	if (str.empty())
 		return;
@@ -75,7 +86,7 @@ void left_delete_string(std::string& str, char ch)
 	str = std::string(begin, end);
 }
 
-void right_delete_string(std::string& str, char ch)
+void right_delete(std::string& str, char ch)
 {
 	if (str.empty())
 		return;
@@ -101,3 +112,42 @@ void right_delete_string(std::string& str, char ch)
 
 	str = std::string(begin, end);
 }
+
+void split_string(const std::string& str, const std::string& sp, std::vector<std::string>& res)
+{
+#ifdef USE_C_IMPLEMENT
+	size_t len = str.size();
+	char* buf = new char[len + 1];
+	memcpy(buf, str.c_str(), len + 1);
+	char* p = strtok(buf, sp.c_str());
+	while (p)
+	{
+		res.push_back(p);
+		p = strtok(nullptr, sp.c_str());
+	}
+	delete[] buf;
+#else
+#if __cplusplus < 201103L
+	size_t pre_pos = 0;
+	size_t pos = str.find(sp, pre_pos);
+
+	while (pos != str.npos)
+	{
+		res.push_back(str.substr(pre_pos, pos - pre_pos));
+		pre_pos = pos + 1;
+		pos = str.find(sp, pre_pos);
+	}
+
+	if (pre_pos < str.size())
+	{
+		res.push_back(str.substr(pre_pos, str.size() - pre_pos));
+	}
+#else
+	std::regex re(sp);
+	std::sregex_token_iterator begin{ str.begin(), str.end(), re, -1 }, end;
+	res.assign(begin, end);
+#endif
+#endif
+}
+
+DREAM_NAMESPACE_END

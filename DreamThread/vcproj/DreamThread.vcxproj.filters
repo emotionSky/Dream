@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="脚本">
+      <UniqueIdentifier>{356d2778-c2a1-46f6-b63f-c3fd534717f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\win_thread">
+      <UniqueIdentifier>{f5a52e1f-3a22-445a-a5c4-1b5ea6602d34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\win_thread">
+      <UniqueIdentifier>{4ac886f4-500f-423e-8d7c-3a878fe484c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="文件">
+      <UniqueIdentifier>{616933f6-5d27-4c25-b52c-bd5e737c7e1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\std_thread">
+      <UniqueIdentifier>{dad92246-90fb-45c8-b73b-e2c03521e127}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\pthread">
+      <UniqueIdentifier>{66ca617a-8a7c-4e3e-8d69-465e350d69d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\std_thread">
+      <UniqueIdentifier>{2cc7a25d-d2d1-48bc-97f8-db2127e39b06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\pthread">
+      <UniqueIdentifier>{9c5832e1-7c12-4ce8-9f43-e73f28127042}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="postbuild.bat">
+      <Filter>脚本</Filter>
+    </None>
+    <None Include="..\doc\函数说明.md">
+      <Filter>文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\DreamSky\dream_thread.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\DreamSky\win_thread\win_thread.h">
+      <Filter>头文件\win_thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\DreamSky\pthread\p_mutex.h">
+      <Filter>头文件\pthread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\DreamSky\pthread\p_thread.h">
+      <Filter>头文件\pthread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\DreamSky\std_thread\std_thread.h">
+      <Filter>头文件\std_thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\DreamSky\pthread\p_semaphore.h">
+      <Filter>头文件\pthread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\DreamSky\win_thread\win_mutex.h">
+      <Filter>头文件\win_thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\DreamSky\win_thread\win_semaphore.h">
+      <Filter>头文件\win_thread</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\dream_thread.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\win_thread\win_thread.cpp">
+      <Filter>源文件\win_thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\std_thread\std_thread.cpp">
+      <Filter>源文件\std_thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\pthread\p_thread.cpp">
+      <Filter>源文件\pthread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\pthread\p_mutex.cpp">
+      <Filter>源文件\pthread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\pthread\p_semaphore.cpp">
+      <Filter>源文件\pthread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\win_thread\win_mutex.cpp">
+      <Filter>源文件\win_thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\win_thread\win_semaphore.cpp">
+      <Filter>源文件\win_thread</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

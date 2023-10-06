@@ -23,9 +23,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\DreamSky\dream_socket.h" />
+    <ClInclude Include="..\include\DreamSky\win\win_socket.h" />
+    <ClInclude Include="..\include\DreamSky\win\win_epoll.h" />
+    <ClInclude Include="..\include\DreamSky\x\x_socket.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\dream_socket.cpp" />
+    <ClCompile Include="..\src\win\win_epoll.c" />
+    <ClCompile Include="..\src\win\win_socket.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -90,7 +95,8 @@
     <TargetName>libdream_socket</TargetName>
     <IntDir>$(Platform)_$(Configuration)\</IntDir>
     <OutDir>$(ProjectDir)bin\</OutDir>
-    <IncludePath>..\include;..\..\3d_part\DreamHeaders\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\include;..\..\3d_part\DreamCommon\v1.0.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\3d_part\DreamCommon\v1.0.0\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -133,11 +139,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;DREAMSKY_EXPORTS;USE_STD_VSNPRINTF;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4996;5105</DisableSpecificWarnings>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libdream_common.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>.\postbuild.bat</Command>

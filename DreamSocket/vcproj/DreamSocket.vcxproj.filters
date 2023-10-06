@@ -16,6 +16,15 @@
     <Filter Include="脚本">
       <UniqueIdentifier>{356d2778-c2a1-46f6-b63f-c3fd534717f2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\win">
+      <UniqueIdentifier>{8eee97a1-0699-4d34-bcb9-bcd6711321d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\win">
+      <UniqueIdentifier>{1b6ac8f5-0799-4b54-8e93-50f98029c06d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\x">
+      <UniqueIdentifier>{3577b441-4df3-45a1-8534-f1028f511342}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="postbuild.bat">
@@ -26,10 +35,25 @@
     <ClInclude Include="..\include\DreamSky\dream_socket.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\DreamSky\win\win_epoll.h">
+      <Filter>头文件\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\DreamSky\win\win_socket.h">
+      <Filter>头文件\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\DreamSky\x\x_socket.h">
+      <Filter>头文件\x</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\dream_socket.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\win\win_epoll.c">
+      <Filter>源文件\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\win\win_socket.cpp">
+      <Filter>源文件\win</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

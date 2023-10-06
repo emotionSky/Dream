@@ -24,8 +24,8 @@
     <ClInclude Include="..\src\log_printf.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\log_core.c" />
-    <ClCompile Include="..\src\log_printf.c" />
+    <ClCompile Include="..\src\log_core.cpp" />
+    <ClCompile Include="..\src\log_printf.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="postbuild.bat" />
@@ -93,7 +93,7 @@
     <TargetName>libdream_log</TargetName>
     <IntDir>$(Platform)_$(Configuration)\</IntDir>
     <OutDir>$(ProjectDir)bin\</OutDir>
-    <IncludePath>..\include;..\..\3d_part\DreamHeaders\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>

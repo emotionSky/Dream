@@ -12,6 +12,7 @@
 #define STDIN_FILENO 0
 #define STDOUT_FILENO 1
 #define STDERR_FILENO 2
+#include <io.h>
 #else
 #include <unistd.h>
 #endif
@@ -115,7 +116,7 @@ void log_stderr(int err, const char *fmt, ...)
 
     va_start(args, fmt);                   ///<使args指向起始的参数
 #if USE_STD_VSNPRINTF
-    int ret = vsnprintf(p, (last - p), fmt, args); ///<使用vsnprintf函数
+    int ret = vsnprintf((char*)p, (last - p), fmt, args); ///<使用vsnprintf函数
     if (ret < 0)
     {
         va_end(args);                     ///<释放args
@@ -144,7 +145,7 @@ void log_stderr(int err, const char *fmt, ...)
     *p++ = '\n'; ///<强行替换为换行符'\n'
 
     ///<向标准错误【一般是屏幕】输出信息，这里的 STDERR_FILENO 就是标准错误文件描述符，一般指屏幕
-    write(STDERR_FILENO, errstr, p - errstr);
+    write(STDERR_FILENO, errstr, static_cast<unsigned int>(p - errstr));
 
     if (log_obj.fd > STDERR_FILENO) ///<如果这是个有效的日志文件，本条件肯定成立，此时也才有意义将这个信息写到日志文件
     {
@@ -216,7 +217,7 @@ void log_error_core(int level, int err, const char *fmt, ...)
 
     va_start(args, fmt);                   ///<使args指向起始的参数
 #if USE_STD_VSNPRINTF
-	int ret = vsnprintf(p, (last - p), fmt, args); ///<使用vsnprintf函数
+	int ret = vsnprintf((char*)p, (last - p), fmt, args); ///<使用vsnprintf函数
 	if (ret < 0)
 	{
 		va_end(args);                     ///<释放args
@@ -253,7 +254,7 @@ void log_error_core(int level, int err, const char *fmt, ...)
         /** 磁盘是否写满的判断啊什么的，暂时先不做实现 */
 
         /** 写日志文件 */
-        n = write(log_obj.fd, errstr, p - errstr);
+        n = write(log_obj.fd, errstr, static_cast<unsigned int>(p - errstr));
         if (n == -1)
         {
             ///<写失败有问题
@@ -268,7 +269,7 @@ void log_error_core(int level, int err, const char *fmt, ...)
                 ///<这是有其他错误，那么我考虑把这个错误显示到标准错误设备吧；
                 if (log_obj.fd != STDERR_FILENO) ///<当前是定位到文件的，则条件成立
                 {
-                    n = write(STDERR_FILENO, errstr, p - errstr);
+                    n = write(STDERR_FILENO, errstr, static_cast<unsigned int>(p - errstr));
                 }
             }
         }

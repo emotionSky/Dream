@@ -3,6 +3,8 @@
 
 #include <DreamSky/dream_define.h>
 
+DREAM_NAMESPACE_BEGIN
+
 /**
  * @class ConfigData
  * @brief 防止配置文件数据的类，兼容stl的导出
@@ -38,5 +40,7 @@ private:
 	ConfigData* m_pData;
 	bool        m_bInit;
 };
+
+DREAM_NAMESPACE_END
 
 #endif //!__DREAM_INI_H__

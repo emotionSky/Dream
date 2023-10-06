@@ -1,10 +1,13 @@
 ﻿#include <DreamSky/dream_time.h>
 
-#ifdef _WIN32
+#if defined(_WIN32) || defined(_WINDLL)
 #include <windows.h>
 #else
 #include <unistd.h>
-#endif // WIN32
+#include <ctime>
+#endif // _WIN32
+
+DREAM_NAMESPACE_BEGIN
 
 void SleepUs(unsigned usec)
 {
@@ -14,8 +17,8 @@ void SleepUs(unsigned usec)
 
 	ft.QuadPart = -(10 * (int64_t)usec);
 
-	timer = CreateWaitableTimer(NULL, TRUE, NULL);
-	SetWaitableTimer(timer, &ft, 0, NULL, NULL, 0);
+	timer = CreateWaitableTimer(nullptr, TRUE, nullptr);
+	SetWaitableTimer(timer, &ft, 0, nullptr, nullptr, 0);
 	WaitForSingleObject(timer, INFINITE);
 	CloseHandle(timer);
 #else
@@ -29,6 +32,15 @@ void SleepMs(unsigned msec)
 	Sleep(msec);
 #else
 	usleep(msec * 1000);
+#endif
+}
+
+void SleepSe(unsigned secs)
+{
+#if defined(_WIN32) || defined(_WINDLL)
+	Sleep(secs * 1000);
+#else
+	sleep(secs);
 #endif
 }
 
@@ -60,3 +72,5 @@ uint64_t GetCurrentMs()
 
 	return time;
 }
+
+DREAM_NAMESPACE_END
